@@ -1,5 +1,5 @@
 .market-container {
-    max-width: 1500px;
+    max-width: 2000px;
     margin: 0 auto;
     padding: 32px 40px;
     background: #f8f9fb;
@@ -147,7 +147,8 @@
     box-shadow: 0 6px 32px rgba(80, 112, 255, 0.10);
     padding: 40px 32px 32px 32px;
     margin-bottom: 40px;
-    overflow-x: auto; /* 允许水平滚动 */
+    overflow-x: auto;
+    /* 允许水平滚动 */
 }
 
 .dark-theme .price-table {
@@ -155,59 +156,81 @@
     box-shadow: 0 6px 32px rgba(0, 0, 0, 0.3);
 }
 
+
 /* 调整表格布局 */
+
 .price-table table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* 确保列宽固定 */
+    /* 移除 table-layout: fixed; 让表格自适应内容宽度 */
 }
 
+
 /* 第一列（收藏星标）的宽度 */
+
 .price-table table th:first-child,
 .price-table table td:first-child {
-    width: 40px; /* 减小收藏按钮列的宽度 */
-    padding-right: 0; /* 减少右侧内边距 */
+    width: 50px;
+    /* 增加收藏按钮列的宽度 */
+    padding-right: 8px;
     text-align: center;
 }
 
+
 /* Token列（第二列）的宽度和间距 */
+
 .price-table table th:nth-child(2),
 .price-table table td:nth-child(2) {
-    width: 160px; /* 给token名称分配足够空间 */
-    padding-left: 5px; /* 减少左侧内边距 */
+    width: 180px;
+    /* 增加token名称的空间 */
+    padding-left: 8px;
 }
 
+
 /* 价格列的宽度 */
+
 .price-table table th:nth-child(3),
 .price-table table th:nth-child(4),
 .price-table table td:nth-child(3),
 .price-table table td:nth-child(4) {
-    width: 120px;
+    width: 140px;
+    /* 增加价格列宽度 */
 }
+
 
 /* 变化百分比列 */
+
 .price-table table th:nth-child(5),
 .price-table table td:nth-child(5) {
-    width: 90px;
+    width: 100px;
+    /* 稍微增加变化列宽度 */
 }
 
-/* 市值和交易量列 - 给它们分配剩余空间 */
+
+/* 市值和交易量列 - 给它们分配更多空间 */
+
 .price-table table th:nth-child(6),
 .price-table table th:nth-child(7),
 .price-table table th:nth-child(8),
 .price-table table td:nth-child(6),
 .price-table table td:nth-child(7),
 .price-table table td:nth-child(8) {
+    min-width: 160px;
+    /* 设置最小宽度而不是固定宽度 */
     width: auto;
 }
 
-/* 减少所有单元格的内边距 */
-.price-table th, .price-table td {
-    padding: 12px 8px; /* 减少水平内边距 */
-    white-space: nowrap; /* 防止内容换行 */
-    overflow: hidden;
-    text-overflow: ellipsis; /* 内容溢出时显示省略号 */
+
+/* 增加所有单元格的内边距，让内容有更多空间 */
+
+.price-table th,
+.price-table td {
+    padding: 12px 12px;
+    /* 增加水平内边距 */
+    white-space: nowrap;
+    /* 防止内容换行 */
     text-align: left;
+    /* 移除 overflow: hidden 和 text-overflow: ellipsis 让内容完整显示 */
 }
 
 .price-table th {
@@ -344,7 +367,9 @@
     gap: 8px;
 }
 
+
 /* Utility classes for width and text alignment */
+
 .w-full {
     width: 100%;
 }
@@ -361,7 +386,9 @@
     text-align: right;
 }
 
+
 /* Additional styles for proper spacing in the table */
+
 .py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -393,15 +420,14 @@
         padding: 32px;
         min-height: 120px;
     }
-    
     /* 响应式表格样式 */
     .price-table {
         padding: 20px 16px;
         overflow-x: auto;
     }
-    
     .price-table table {
-        min-width: 900px; /* 确保表格不会过度压缩 */
+        min-width: 1200px;
+        /* 增加最小宽度，确保表格不会过度压缩 */
     }
 }
 
@@ -437,19 +463,17 @@
         padding: 8px;
         min-height: 60px;
     }
-    
     /* 小屏幕上更紧凑的表格 */
-    .price-table th, .price-table td {
+    .price-table th,
+    .price-table td {
         padding: 8px 6px;
         font-size: 0.9rem;
     }
-    
     /* 第一列（收藏星标）在小屏幕上更窄 */
     .price-table table th:first-child,
     .price-table table td:first-child {
         width: 30px;
     }
-    
     /* Token列在小屏幕上更窄 */
     .price-table table th:nth-child(2),
     .price-table table td:nth-child(2) {
@@ -465,7 +489,9 @@
     color: #a0a0a0;
 }
 
+
 /* Text colors for positive and negative values */
+
 .text-green-500 {
     color: #10B981;
 }
@@ -474,7 +500,9 @@
     color: #EF4444;
 }
 
+
 /* Border utility classes */
+
 .border-b {
     border-bottom: 1px solid #E5E7EB;
 }
@@ -483,7 +511,9 @@
     border-bottom: 1px solid #374151;
 }
 
+
 /* Hover effect for table rows */
+
 .hover\:bg-gray-50:hover {
     background-color: #F9FAFB;
 }
